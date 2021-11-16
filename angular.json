@@ -75,10 +75,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/main/src/**/*.ts",
-              "apps/main/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/main/src/**/*.ts", "apps/main/src/**/*.html"]
           }
         },
         "test": {
