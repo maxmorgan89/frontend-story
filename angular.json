@@ -89,8 +89,7 @@
             "passWithNoTests": true
           }
         }
-      },
-      "tags": []
+      }
     },
     "main-e2e": {
       "root": "apps/main-e2e",
@@ -118,7 +117,6 @@
           }
         }
       },
-      "tags": [],
       "implicitDependencies": ["main"]
     }
   }
