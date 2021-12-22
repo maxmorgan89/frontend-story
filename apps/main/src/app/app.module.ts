@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ThemeSelectorComponent],
   imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
