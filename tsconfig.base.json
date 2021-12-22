@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@frontend-story/shared/utils/storage": ["libs/shared/utils/storage/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
