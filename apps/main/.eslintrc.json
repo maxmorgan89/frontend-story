@@ -10,7 +10,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "frontendStory",
+            "prefix": "fs",
             "style": "camelCase"
           }
         ],
