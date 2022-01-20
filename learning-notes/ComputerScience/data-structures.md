@@ -1,4 +1,4 @@
-##\** Data Structures
+# Data Structures
 [8 common data structures in javascript](https://betterprogramming.pub/8-common-data-structures-in-javascript-3d3537e69a27)
 ##\** Stack
 Stack follows the principle of LIFO (Last In First Out). If you stack books, the top book will be taken before the bottom one. Or when you browse on internet, the back button leads you to the most recently browsed page.
@@ -122,6 +122,7 @@ The hash table has the following methods:
 
 ##\*** Tree
 ![Tree](images/tree.png)
+
 Tree data structure is a multi-layer structure.
 It is also a non-linear data structure,
 compared to Array, Stack, and Queue. This structure is highly efficient during insert and search operations.
@@ -140,6 +141,7 @@ Let’s take a look at some concepts of tree data structure:
 
 ##\*** Trie (pronounced try)
 ![Trie](images/trie.png)
+
 Trie, or “Prefix Tree”, is also a type of search tree.
 Trie stores the data step-by-step — each node in the tree represents a step.
 Trie is used in storing vocabulary, it can be quickly searched, especially for an auto-complete function.
@@ -151,3 +153,13 @@ Trie has the following methods:
 - `add`: Insert a word into the dictionary tree
 - `isWord`: Determine whether the tree consists of certain word
 - `print`: Return all words in the tree
+
+##\*** [Graph](https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/)
+![Graph](images/graph.png)
+
+Graph, sometimes known as network, refers to sets of nodes with linkages (or edges).
+It could be further divided into two groups (ie. directed graphs and undirected graphs),
+according to whether the linkages have direction.
+Graph is widely used in our lives — to calculate the best route in navigation apps,
+or to show recommended friends in social media, to take two examples.
+
