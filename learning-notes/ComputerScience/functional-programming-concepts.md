@@ -3,7 +3,14 @@
 ###\* What is a higher-order function?
 ###\** Pros and cons of FP comparing to OOP and procedural languages. Main use cases.
 ###\** What is a curried function? What is a partial application?
-###\*** What is a functor / endofunctor?
+###\*** Functor
+[Functors, Applicatives, And Monads In Pictures](https://medium.com/@tzehsiang/javascript-functor-applicative-monads-in-pictures-b567c6415221#.rdwll124i)
+
+A functor is any type that defines how `map` works.
+A functor is anything that can be mapped over. This is most commonly a list,
+but really it's any object that can be mapped over.
+
+###\*** Endofunctor
 ###\*** [Tail recursion vs non-tail recursion](https://2ality.com/2015/06/tail-call-optimization.html)
 > Update 2018-05-09: Even though tail call optimization is part of the language specification,
 > [it isn’t supported by many engines and that may never change](https://kangax.github.io/compat-table/es6/#test-proper_tail_calls_(tail_call_optimisation)).
