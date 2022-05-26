@@ -133,7 +133,46 @@ Benefits of IoC:
 - Decreases coupling between classes
 - Makes the application easier to test and maintain
 
-###\*** Association, Aggregation and Composition
+###\*** [Association, Aggregation and Composition](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
+**Association** is a relation between two separate classes which establishes through
+their Objects. Association can be one-to-one, one-to-many, many-to-one, many-to-many.
+In Object-Oriented programming, an Object communicates to another object to use
+functionality and services provided by that object.
+
+![Association, Aggregation and Composition](images/association-aggregation-composition.png)
+
+If two classes in a model need to communicate with each other, there must be a link
+between them, and that can be represented by an association (connector).
+A single student can associate with multiple teachers:
+
+![Association](images/association.png)
+
+**Aggregation** and **Composition** are subsets of association meaning they are
+**specific cases of Association**. In both aggregation and composition object of one class
+"owns" object of another class. But there is a subtle difference:
+- **Aggregation** implies a relationship where the child can exist independently
+of the parent. Example: Class (parent) and Student (child).
+Delete the Class and the Students still exist.
+- **Composition** implies a relationship where the child cannot exist independent of the
+parent. Example: House (parent) and Room (child). Rooms don't exist separate to a House.
+
+####Aggregation Example:
+It's important to note that the aggregation link does not state in any way that
+Class A owns Class B nor that there's a parent-child relationship
+(when parent deleted all its child's are being deleted as a result) between the two.
+Actually, quite the opposite! The aggregation link is usually used to stress
+the point that Class A instance is not the exclusive container of Class B instance,
+as in fact the same Class B instance has another container/s.
+
+![Aggregation](images/aggregation.png)
+####Composition Example:
+We should be more specific and use the composition link in cases where in addition
+to the part-of relationship between Class A and Class B - there's a strong lifecycle
+dependency between the two, meaning that when Class A is deleted then Class B is
+also deleted as a result.
+
+![Composition](images/composition.png)
+
 ###\***
 ###\***
 ###\***

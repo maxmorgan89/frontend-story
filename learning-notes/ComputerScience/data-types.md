@@ -44,6 +44,7 @@ since a floating-point value uses twice as much memory as an integer value.
 The JavaScript **Number.EPSILON** property
 represents the difference between 1 and the smallest floating point number greater than 1.
 **Number.EPSILON** can be used to test the equality of the floating-point numbers (but there is an issue with it).
+
 ```typescript
 console.log(Number.EPSILON); // 2.220446049250313e-16
 
@@ -55,6 +56,9 @@ console.log(a + b == c); // false
 
 console.log(a + b - c < Number.EPSILON); // true
 ```
+You can use your own epsilon number, like 0.001, that will be reasonable for comparing
+numbers in some particular case. For example, you don't need `Number.EPSILON` if you compare meters.
+
 [How to compare numbers correctly in JavaScript](https://dev.to/alldanielscott/how-to-compare-numbers-correctly-in-javascript-1l4i)
 > Result of adding 1 to max value of integer
 Operation completes successfully, initial value would not change.
@@ -140,7 +144,7 @@ adds the indexed elements of an object to its result (“spreading”)
 or the object as a single element.
 
 
-### BigInt
+## BigInt
 ES2020 introduced a new built-in object called BigInt that allows you to represent whole numbers larger 2^53 – 1.
 
 To make a BigInt, you append n to the end of an integer literal or call the function `BigInt()`:
