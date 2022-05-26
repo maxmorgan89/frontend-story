@@ -155,7 +155,7 @@ Trie has the following methods:
 - `print`: Return all words in the tree
 
 ##\*** [Graph](https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/)
-![Graph](images/graph.png)
+![Graph](images/graph.jpg)
 
 Graph, sometimes known as network, refers to sets of nodes with linkages (or edges).
 It could be further divided into two groups (ie. directed graphs and undirected graphs),
@@ -163,3 +163,33 @@ according to whether the linkages have direction.
 Graph is widely used in our lives — to calculate the best route in navigation apps,
 or to show recommended friends in social media, to take two examples.
 
+A graph is a data structure where a node can have zero or more adjacent (neighbor) elements.
+
+The connection between two nodes is called edge. Nodes can also be called vertices.
+
+The degree is the number of edges connected to a vertex.
+E.g., the `purple` vertex has a degree of `3` while the `blue` one has a degree of `1`.
+
+If the edges are `bi-directional`, then we have an `undirected` graph.
+If the edges have a `direction`, then we have a `directed` graph or di-graph for short.
+You can think of it as a one-way street (directed) or two-way street (undirected).
+
+![Graph directed vs undirected](images/graph-directed-vs-undirected.jpg)
+
+Vertex can have edges that go to itself (e.g., `blue` node). This is called `self-loop`.
+
+A graph can have cycles, which means you could get the same node more than once.
+The graph without cycles is called acyclic graph.
+
+![Graph cyclic vs acyclic directed](images/graph-cyclic-vs-acyclic-directed.jpg)
+
+Also, acyclic undirected graphs are called `tree`.
+
+Not all vertices have to be connected in the graph.
+You might have isolated nodes or even separated subgraphs.
+If all nodes have at least one edge, then we have a `connected graph`.
+When all nodes are connected to all other nodes, then we have a `complete graph`.
+
+![Graph connected vs complete](images/graph-connected-vs-complete.jpg)
+
+For a complete graph, each node should have `#nodes - 1` edges.

@@ -77,6 +77,69 @@ the symbol type does not have a literal form.
 ```typescript
 let s1 = Symbol('Symbol descrition text');
 ```
+- Symbol can take a key as parameter
+- Every symbol value returned from Symbol is unique
+```typescript
+let symbol1 = Symbol('Some Description')
+  , symbol2 = Symbol('Some Description');
+console.log(symbol1); // "Symbol(Some Description)"
+console.log(symbol1 === symbol2); // here we will get `false`
+```
+
+Symbol provides two static functions .for(key) and .keyFor(symbol):
+- .for(key) function - method searches for existing symbols
+in a runtime-wide symbol registry with the given key and returns it if found.
+Otherwise, a new symbol gets created in the global symbol registry with this key.
+```typescript
+const symbol1 = Symbol.for('globalSymbol');
+const symbol2 = Symbol.for('globalSymbol');
+console.log(symbol1 === symbol2); // true
+console.log(Symbol.for('globalSymbol') === Symbol.for('globalSymbol')); // true
+```
+- .keyFor(symbol) - method retrieves a shared symbol key
+from the global symbol registry for the given symbol.
+`Symbol.keyFor(symbol)` returns undefined for local symbol
+```typescript
+let globalSymbol = Symbol.for('foo'); // global symbol
+console.log(Symbol.keyFor(globalSymbol)); // "foo"
+
+let localSymbol = Symbol('Hello');
+console.log(Symbol.keyFor(localSymbol)); // undefined
+```
+
+#### [Well known Symbols](https://2ality.com/2015/09/well-known-symbols-es6.html)
+All well-known symbols in ES6 are keys for properties.
+If you add a property to an object that has one of those keys,
+you change how ES6 treats that object.
+These are all well-known symbols in ES6:
+1. Customizing basic language operations:
+- `Symbol.hasInstance` (method) customizes instanceof.
+- `Symbol.toPrimitive` (method) customizes the coercion
+of an object to a primitive value.
+- `Symbol.toStringTag (string)`
+customizes the result returned by Object.prototype.toString().
+2. Iteration:
+- `Symbol.iterator` (method)
+A method with this key makes an object iterable
+(its elements can be iterated over language constructs
+such as the for-of loop and the spread operator (...)).
+3. Forwarding calls from string methods to their parameters:
+- `Symbol.match`
+- `Symbol.replace`
+- `Symbol.search`
+- `Symbol.split`
+4. Miscellaneous:
+- `Symbol.unscopables` (Object)
+lets you hide some properties from the with statement.
+- `Symbol.species` (method)
+configures how built-in methods create objects
+that are similar to this.
+- `Symbol.isConcatSpreadable` (boolean)
+configures whether Array.prototype.concat()
+adds the indexed elements of an object to its result (“spreading”)
+or the object as a single element.
+
+
 ### BigInt
 ES2020 introduced a new built-in object called BigInt that allows you to represent whole numbers larger 2^53 – 1.
 

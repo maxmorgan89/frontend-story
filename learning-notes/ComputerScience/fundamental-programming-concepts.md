@@ -18,7 +18,24 @@ the final equality comparison is performed exactly as === performs it.
 `undefined` and `null` are loosely equal; that is, `undefined == null` is `true`
 
 ##\** What's the difference between an Object (JavaScript Object) and a Map?
-##\** Describe steps of Breadth-First Search (or Depth-First Search) for graphs
+1. A Map is ordered and iterable,
+whereas a objects is not ordered and not iterable
+2. We can put any type of data as a Map key,
+whereas objects can only have a number, string, or symbol as a key.
+3. A Map inherits from Map.prototype.
+This offers all sorts of utility functions and properties
+which makes working with Map objects a lot easier.
+
+##\** Describe steps of Breadth-First Search for graphs
+Breadth-first search is a way to navigate a graph from
+an initial vertex by visiting all the adjacent nodes first.
+![BigOComplexity](images/Breadth-First-Search-Algorithm.gif)
+
+##\** Describe steps of Depth-First Search for graphs
+Depth-first search is another way to navigate a graph from an initial vertex
+by recursively the first adjacent node of each vertex found.
+![BigOComplexity](images/Depth-First-Search.gif)
+
 ##\*** [Big-O complexities](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/)
 ![BigOComplexity](images/big-o-complexity.jpeg)
 
