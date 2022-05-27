@@ -113,6 +113,9 @@ A functor is anything that can be mapped over. This is most commonly a list,
 but really it's any object that can be mapped over.
 
 ###\*** Endofunctor
+Endofunctor is a mapping of objects and morphisms from one Category back to the same
+Category. Actually, all the Functors we are dealing with in functional programming
+are Endofunctors, this is because we are dealing with only one Category — Category of types.
 ###\*** Monad
 A monad is a type that implements flatMap.
 ###\*** Applicative

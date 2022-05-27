@@ -161,3 +161,9 @@ console.log(1n < 2); // true
 console.log(2n > 1); // true
 console.log(2n >= 2); // true
 ```
+
+## Object
+Used to store various keyed collections and more complex entities.
+Objects can be created using the Object() constructor or the object initializer (Object.create()) / literal syntax ({}).
+An object initializer is a comma-delimited list of zero or more pairs of property
+names and associated values of an object, enclosed in curly braces ({}).

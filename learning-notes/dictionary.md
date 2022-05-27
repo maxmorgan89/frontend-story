@@ -7,4 +7,14 @@
 > **Unilateral** -  relating to, or affecting one side of a subject : One-Sided, One Way. Unilateral Linked list,
 > where nodes have a link only to next node, and no parent link.
 
-> **Vertex** - 
+> **Coalescing** - come together to form one mass or whole. **Synonyms**:
+unite, join together, combine, merge, fuse
+
+> **Coercion** - the practice of persuading someone to do something by using force or threats.
+"_our problem cannot be solved by any form of coercion but only by agreement_"
+**Synonyms**: force, compulsion, constraint, duress, oppression, enforcement
+
+> **Precedence** - the condition of being considered more important than someone
+or something else; priority in importance, order, or rank.
+"_his desire for power soon took precedence over any other consideration_"
+**Synonyms**: take priority over, be considered more important/urgent than, outweigh
