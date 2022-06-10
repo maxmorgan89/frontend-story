@@ -18,3 +18,6 @@ unite, join together, combine, merge, fuse
 or something else; priority in importance, order, or rank.
 "_his desire for power soon took precedence over any other consideration_"
 **Synonyms**: take priority over, be considered more important/urgent than, outweigh
+
+> **Variadic function** - In mathematics and in computer programming, a variadic function
+is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
