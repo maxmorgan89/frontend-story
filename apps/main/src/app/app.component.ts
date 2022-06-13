@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Range} from "./helpers/range";
 
 @Component({
   selector: 'fs-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'main';
+  public arr: number[] = [...new Range(1, 5)]
 }

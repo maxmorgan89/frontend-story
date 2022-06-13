@@ -127,7 +127,7 @@ In JavaScript, functions are first-class objects, because they can have properti
 methods just like any other object. What distinguishes them from other objects is that
 functions can be called. In brief, they are `Function` objects.
 
-####  Function Declaration/Statement vs Expression
+####  Function Declaration/Statement vs Expression (anonymous)
 ```typescript
 function bar(a, b) {return a * b} // Function Declaration
 var exp = function (a, b) {return a * b} // Function Expression
@@ -193,15 +193,7 @@ That’s good, because if we `for..in` over an object, we usually don’t want i
 3. Classes always use strict. All code inside the class construct is automatically in strict mode.
 Besides, `class` syntax brings many other features that we’ll explore later.
 
-#### Prototype
-`__proto__` is the actual object that is used in the lookup chain to resolve methods, etc.
-`prototype` is the object that is used to build `__proto__` when you create an object with `new`
-```typescript
-( new Foo ).__proto__ === Foo.prototype
-( new Foo ).prototype === undefined
-```
-
-### \** Arrow function
+### \** Arrow function (anonymous)
 Arrow functions can be used in the same way as Function Expressions.
 - Arrow functions do not have this. If this is accessed, it is taken from the outside.
 - Not having this naturally means another limitation: arrow functions can’t be
@@ -315,11 +307,72 @@ The main method of a generator is `next()`. When called, it runs the execution u
 `yield <value>` statement (`value` can be omitted, then it’s `undefined`).
 Then the function execution pauses, and the yielded `value` is returned to the outer code.
 
-The result of next() is always an object with two properties:
+The result of `next()` is always an object with two properties:
 - `value`: the yielded value.
 - `done`: `true` if the function code has finished, otherwise `false`.
 
-### \*** Iterators
+### \*** [Iterators](https://javascript.info/iterable)
+To make the `object` iterable (and thus let `for..of` work) we need to add a method to the object
+named `Symbol.iterator` (a special built-in symbol just for that).
+1. When `for..of` starts, it calls that method once (or errors if not found).
+The method must return an _iterator_ – an object with the method `next()`.
+2. Onward, `for..of` works only with that returned object.
+3. When `for..of` wants the next value, it calls `next()` on that object.
+4. The result of `next()` must have the form `{done: Boolean, value: any}:: IteratorResult`,
+where `done=true` means that the loop is finished, otherwise `value` is the next value.
+
+```typescript
+function range(from: number, to: number) {
+  return {
+    from: from,
+    to: to,
+    [Symbol.iterator]() {
+      return ({
+        current: this.from,
+        last: this.to,
+        next() {
+          if (this.current <= this.last) {
+            return {done: false, value: this.current++};
+          } else {
+            return {done: true, value: this.current};
+          }
+        }
+      })
+    }
+  }
+}
+```
+The iterator object is separate from the object it iterates over.
+
+String is iterable. For a string, `for..of` loops over its characters.
+
+#### Iterables and array-likes
+Two official terms look similar, but are very different:
+- Iterables are objects that implement the `Symbol.iterator` method, as described above.
+- Array-likes are objects that have indexes and `length`, so they look like arrays.
+
+#### Array.from
+There’s a universal method `Array.from` that takes an iterable or array-like value
+and makes a “real” Array from it. Then we can call array methods on it.
+```typescript
+let arrayLike = {
+  0: "Hello",
+  1: "World",
+  length: 2
+};
+
+let arr = Array.from(arrayLike); // (*)
+alert(arr.pop()); // World (method works)
+```
+The optional second argument `mapFn` can be a function that will be applied to each
+element before adding it to the array, and `thisArg` allows us to set `this` for it.
+```typescript
+// Array.from(obj[, mapFn, thisArg])
+// Assuming that range is taken from the example above.
+// Square each number.
+let arr = Array.from(range, num => num * num);
+alert(arr); // 1,4,9,16,25
+```
 
 ### \*** Proxy
 It can wrap any kind of object, including classes and functions.

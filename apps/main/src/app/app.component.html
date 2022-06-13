@@ -3,5 +3,8 @@
 </header>
 <main>
   <h2>Resources &amp; Tools</h2>
+  <ng-container *ngFor="let item of arr">
+    <div>{{ item }}</div>
+  </ng-container>
 </main>
 <fs-theme-selector></fs-theme-selector>
