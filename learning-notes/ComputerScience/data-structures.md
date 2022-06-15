@@ -1,6 +1,6 @@
 # Data Structures
 [8 common data structures in javascript](https://betterprogramming.pub/8-common-data-structures-in-javascript-3d3537e69a27)
-##\** Stack
+## ** Stack
 Stack follows the principle of LIFO (Last In First Out). If you stack books, the top book will be taken before the bottom one. Or when you browse on internet, the back button leads you to the most recently browsed page.
 Stack has these common methods:
 - `push`: input a new element
@@ -36,7 +36,7 @@ function Stack() {
     }
 }
 ```
-##\** Queue
+## ** Queue
 Queue is similar to Stack.
 The only difference is that Queue uses the FIFO principle (First In First Out).
 In other words, when you queue for bus, the first in the queue will always board first.
@@ -78,7 +78,7 @@ function Queue() {
 Queue has another advanced version.
 Allocate each element with priority, and it will be sorted according to the priority level
 
-##\** List
+## ** List
 Literally, a linked list is a chained data structure, with each node consisting of two pieces of information:
 the data of the node and the pointer to the next node.
 Linked list and conventional array are both linear data structures with serialised storage.
@@ -104,7 +104,7 @@ A unilateral linked list normally has the following methods:
 - `addAt`: Insert a node at a specific index
 - `removeAt`: Delete a node at a specific index
 
-##\*** Hash table
+## *** Hash table
 ![Hash Table](images/hash-table.png)
 
 A hash table is a key-value data structure.
@@ -120,7 +120,7 @@ The hash table has the following methods:
 - `remove`: Delete a key-value pair
 - `lookup`: Find a corresponding value using a key
 
-##\*** Tree
+## *** Tree
 ![Tree](images/tree.png)
 
 Tree data structure is a multi-layer structure.
@@ -139,7 +139,7 @@ Let’s take a look at some concepts of tree data structure:
 - `Depth of Node`: Number of edges from root node to specific node
 - `Degree of Node`: Number of child nodes
 
-##\*** Trie (pronounced try)
+## *** Trie (pronounced try)
 ![Trie](images/trie.png)
 
 Trie, or “Prefix Tree”, is also a type of search tree.
@@ -154,7 +154,7 @@ Trie has the following methods:
 - `isWord`: Determine whether the tree consists of certain word
 - `print`: Return all words in the tree
 
-##\*** [Graph](https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/)
+## *** [Graph](https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/)
 ![Graph](images/graph.jpg)
 
 Graph, sometimes known as network, refers to sets of nodes with linkages (or edges).
