@@ -1,6 +1,6 @@
 # JS Core
 
-### \* Primitive values
+### * Primitive values
 JavaScript has 7 primitive data types:
 
 1. null
@@ -13,13 +13,13 @@ JavaScript has 7 primitive data types:
 
 And one complex Data Type - object.
 
-### \* Are primitive values/objects mutable or immutable?
+### * Are primitive values/objects mutable or immutable?
 All primitives are immutable, i.e., they cannot be altered. It is important not to
 confuse a primitive itself with a variable assigned a primitive value.
 The variable may be reassigned a new value, but the existing value can not be changed
 in the ways that objects, arrays, and functions can be altered.
 
-### \* How does coercion work? Describe how it compares the following: 3 > 2 > 1
+### * How does coercion work? Describe how it compares the following: 3 > 2 > 1
 Type **Coercion** refers to the process of automatic or implicit conversion of values
 from one data type to another. This includes conversion from Number to String,
 String to Number, Boolean to Number etc. when different types of operators are
@@ -32,11 +32,11 @@ value to that datatype, like the Number(), String() or Boolean() constructor.
 
 `true > 1` - false, because `Number(true)` - 1, and `1 > 1` - false
 
-### \* Can we delete (using delete operator) any property declared with var/let/const from the global scope or from a function's scope?
+### * Can we delete (using delete operator) any property declared with var/let/const from the global scope or from a function's scope?
 No. The JavaScript delete operator removes a property from an object;
 if no more references to the same property are held, it is eventually released automatically.
 
-### \* Functions
+### * Functions
 A function is a block of code that performs a specific task.
 
 In JavaScript, functions are first-class objects, because they can have properties and
@@ -56,7 +56,7 @@ load only when the interpreter reaches that line of code.
 Function expressions aren’t hoisted, which allows them to retain a copy of the
 local variables from the scope where they were defined.
 
-### \* Precedence (operators priority)
+### * Precedence (operators priority)
 Operator precedence determines how operators are parsed concerning each other.
 Operators with higher precedence become the operands of operators with lower precedence.
 ```typescript
@@ -70,13 +70,13 @@ console.log(a = b = 5);
 // expected output: 5
 ```
 
-### \** let
+### ** let
 A variable is a “named storage” for data.
 
-### \** const
+### ** const
 Cannot be reassigned. An attempt to do so would cause an error.
 
-### \** class
+### ** class
 In object-oriented programming, a class is an extensible program-code-template for
 creating objects, providing initial values for state (member variables) and implementations
 of behavior (member functions or methods).
@@ -168,7 +168,7 @@ console.log(d); // 20
 console.log(rest); // {c: 30, d: 40}
 ```
 
-### \** Template literals (String templates)
+### ** Template literals (String templates)
 Template literals are literals delimited with backtick (`) characters,
 allowing for multi-line strings, for string interpolation with embedded expressions,
 and for special constructs called tagged templates.
@@ -190,13 +190,13 @@ tagFunction`That ${ person } is a ${ age }.`
 // That Mike is a 18.
 ```
 
-### \** nullish coalescing
+### ** nullish coalescing
 nullish coalescing operator `??` uses the right value if left is `null` or `undefined`.
 
-### \** OR coalescing
+### ** OR coalescing
 The OR operator `||` uses the right value if left is falsy.
 
-### \** Optional chaining
+### ** Optional chaining
 The optional chaining operator `?.` enables you to read the value of a property located deep
 within a chain of connected objects without having to check that each reference in the chain is valid.
 Instead of causing an error if a reference is nullish (`null` or `undefined`),
@@ -206,15 +206,15 @@ When used with function calls, it returns `undefined` if the given function does
 object?.someNonExistentMethod?.()
 ```
 
-### \*** nullish coalescing vs OR coalescing
+### *** nullish coalescing vs OR coalescing
 OR operator `||` can be problematic if your left value might contain `""` or `0` or `false`
 (because these are falsy values).
 
-### \*** Tagged templates
+### *** Tagged templates
 
-### \*** Converting an object to a primitive value (valueof/symbol.ToPrimitive)
+### *** Converting an object to a primitive value (valueof/symbol.ToPrimitive)
 
-### \**** Reflection API
+### **** Reflection API
 
-### \**** Create decorators using the reflection
+### **** Create decorators using the reflection
 
