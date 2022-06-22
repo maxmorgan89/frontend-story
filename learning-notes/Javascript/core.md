@@ -36,26 +36,6 @@ value to that datatype, like the Number(), String() or Boolean() constructor.
 No. The JavaScript delete operator removes a property from an object;
 if no more references to the same property are held, it is eventually released automatically.
 
-### * Functions
-A function is a block of code that performs a specific task.
-
-In JavaScript, functions are first-class objects, because they can have properties and
-methods just like any other object. What distinguishes them from other objects is that
-functions can be called. In brief, they are `Function` objects.
-
-####  Function Declaration/Statement vs Expression (anonymous)
-```typescript
-function bar(a, b) {return a * b} // Function Declaration
-var exp = function (a, b) {return a * b} // Function Expression
-```
-The main difference between a function expression and a function declaration is the function name,
-which can be omitted in function expressions to create anonymous functions.
-- Function declarations load before any code is executed while Function expressions
-load only when the interpreter reaches that line of code.
-- Similar to the var statement, function declarations are hoisted to the top of other code.
-Function expressions aren’t hoisted, which allows them to retain a copy of the
-local variables from the scope where they were defined.
-
 ### * Precedence (operators priority)
 Operator precedence determines how operators are parsed concerning each other.
 Operators with higher precedence become the operands of operators with lower precedence.
