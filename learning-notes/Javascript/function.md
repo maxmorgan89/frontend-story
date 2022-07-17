@@ -160,6 +160,17 @@ In JavaScript, functions are objects.
 A good way to imagine functions is as callable “action objects”. We can not only call them,
 but also treat them as objects: add/remove properties, pass by reference etc.
 
+Function has some properties:
+- `name` - function's name `myFunc.name`
+- `length` - returns the number of function parameters
+
+###### Custom properties
+We can also add properties to function of our own.
+
+> A property assigned to a function like `sayHi.counter = 0` does not define a local variable`counter`
+inside it. In other words, a property `counter` and a variable `let counter`are two unrelated things.
+We can treat a function as an object, store properties in it, but that has no effect on its execution.
+Variables are not function properties and vice versa. These are just parallel worlds.
 
 
 
