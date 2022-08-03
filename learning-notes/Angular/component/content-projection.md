@@ -63,24 +63,11 @@ content you want to conditionally render.
 Using an `<ng-content>` element in these cases is not recommended, because when the consumer
 of a component supplies the content, that content is always initialized, even if the component
 does not define an `<ng-content>` element or if that `<ng-content>` element is 
-inside of an `ngIf` statement.
+inside an `ngIf` statement.
 
 With an `<ng-template>` element, you can have your component explicitly render content based
 on any condition you want, as many times as you want. Angular will not initialize the content
 of an `<ng-template>` element until that element is explicitly rendered.
 
 ### Projecting content in more complex environments
-
-
-
-
-
-
-
-
-
-
-
-
-
 
