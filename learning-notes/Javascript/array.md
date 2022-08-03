@@ -1,4 +1,5 @@
 ### [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
+
 JavaScript typed arrays are array-like objects that provide a mechanism for reading and writing
 raw binary data in memory buffers.
 
@@ -11,4 +12,3 @@ value in one of a number of supported formats, from 8-bit integers to 64-bit flo
 However, typed arrays are not to be confused with normal arrays, as calling `Array.isArray()`
 on a typed array returns `false`. Moreover, not all methods available for normal arrays
 are supported by typed arrays (e.g. push and pop).
-

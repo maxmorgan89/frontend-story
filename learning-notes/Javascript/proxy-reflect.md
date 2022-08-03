@@ -1,10 +1,13 @@
-### \*** [Proxy](https://javascript.info/proxy)
+### \*\*\* [Proxy](https://javascript.info/proxy)
+
 A Proxy object wraps another object and intercepts operations, like reading/writing properties
 and others, optionally handling them on its own, or transparently allowing the object to handle them.
 It can wrap any kind of object, including classes and functions.
+
 ```typescript
-let proxy = new Proxy(target, handler)
+let proxy = new Proxy(target, handler);
 ```
+
 - `target` – is an object to wrap, can be anything, including functions.
 - `handler` – proxy configuration: an object with “traps”, methods that intercept
   operations. – e.g. `get` trap for reading a property of target, `set` trap for writing a property into target, and so on.
@@ -22,7 +25,7 @@ These methods are only used in the specification, we can’t call them directly 
 Proxy traps intercept invocations of these methods.
 
 | Internal Method         | Handler Method             | Triggers when…                                                                                        |
-|-------------------------|----------------------------|-------------------------------------------------------------------------------------------------------|
+| ----------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `[[Get]]`               | `get`                      | reading a property                                                                                    |
 | `[[Set]]`               | `set`                      | writing to a property                                                                                 |
 | `[[HasProperty]]`       | `has`                      | `in` operator                                                                                         |
@@ -39,19 +42,23 @@ Proxy traps intercept invocations of these methods.
 
 JavaScript enforces some invariants – conditions that must be fulfilled by internal methods and traps.
 ost of them are for return values:
+
 - `[[Set]]` must return true if the value was written successfully, otherwise false.
 - `[[Delete]]` must return true if the value was deleted successfully, otherwise false.
 - …and so on, we’ll see more in examples below.
 
 #### Default value with “get” trap
+
 To intercept reading, the handler should have a method `get(target, property, receiver)`.
+
 - `target` – is the target object, the one passed as the first argument to new Proxy,
 - `property` – property name,
 - `receiver` – if the target property is a getter, then `receiver` is the object that’s going
-to be used as this in its call. Usually that’s the proxy object itself (or an object that inherits
-from it, if we inherit from proxy).
+  to be used as this in its call. Usually that’s the proxy object itself (or an object that inherits
+  from it, if we inherit from proxy).
 
 We’ll make a numeric array that returns 0 for nonexistent values.
+
 ```typescript
 let numbers = [0, 1, 2];
 
@@ -62,14 +69,15 @@ numbers = new Proxy(numbers, {
     } else {
       return 0; // default value
     }
-  }
+  },
 });
 
-alert( numbers[1] ); // 1
-alert( numbers[123] ); // 0 (no such item)
+alert(numbers[1]); // 1
+alert(numbers[123]); // 0 (no such item)
 ```
 
 #### Proxy limitations
+
 Many built-in objects, for example `Map`, `Set`, `Date`, `Promise` and others make use of so-called “_internal slots_”.
 
 These are like properties, but reserved for internal, specification-only purposes.
@@ -81,6 +89,7 @@ a slot. The built-in method `Map.prototype.set` method tries to access the inter
 `this.[[MapData]]`, but because `this=proxy`, can’t find it in proxy and just fails.
 
 Fortunately, there’s a way to fix it:
+
 ```typescript
 let map = new Map();
 
@@ -88,16 +97,18 @@ let proxy = new Proxy(map, {
   get(target, prop, receiver) {
     let value = Reflect.get(...arguments);
     return typeof value == 'function' ? value.bind(target) : value;
-  }
+  },
 });
 
 proxy.set('test', 1);
 alert(proxy.get('test')); // 1 (works!)
 ```
+
 Now it works fine, because `get` trap binds function properties, such as `map.set`,
 to the target object (`map`) itself.
 
 #### Revocable proxies
+
 A revocable proxy is a proxy that can be disabled.
 
 Let’s say we have a resource, and would like to close access to it any moment.
@@ -106,10 +117,10 @@ forward operations to object, and we can disable it at any moment.
 
 ```typescript
 let object = {
-  data: "Valuable data"
+  data: 'Valuable data',
 };
 
-let {proxy, revoke} = Proxy.revocable(object, {});
+let { proxy, revoke } = Proxy.revocable(object, {});
 
 // pass the proxy somewhere instead of object...
 alert(proxy.data); // Valuable data
@@ -127,6 +138,7 @@ so they are no longer connected.
 Initially, `revoke` is separate from `proxy`, so that we can pass proxy around while leaving revoke in the current scope.
 
 ### Reflect
+
 `Reflect` is a built-in object that simplifies creation of `Proxy`.
 
 It was said previously that internal methods, such as `[[Get]]`, `[[Set]]` and others are
