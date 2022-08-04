@@ -1,11 +1,12 @@
 > **Immutable** - unchangeable, can not be mutated
 
-> **Peek** - a quick or furtive look, "she sneaked a peek at the map". We can peek at the top element of a stack.
+> **Peek** - a quick or furtive look, "she sneaked a peek at the map". We can peek at the
+> top element of a stack.
 
 > **Spatial** - relating to or occupying space, "the spatial distribution of population".
 
-> **Unilateral** - relating to, or affecting one side of a subject : One-Sided, One Way. Unilateral Linked list,
-> where nodes have a link only to next node, and no parent link.
+> **Unilateral** - relating to, or affecting one side of a subject : One-Sided, One Way.
+> Unilateral Linked list, where nodes have a link only to next node, and no parent link.
 
 > **Coalescing** - come together to form one mass or whole. **Synonyms**:
 > unite, join together, combine, merge, fuse
@@ -21,3 +22,8 @@
 
 > **Variadic function** - In mathematics and in computer programming, a variadic function
 > is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
+
+> **Reducer** - a machine that transform (convert) action.
+ 
+> **Dispatcher** - a communications worker who receives and transmits information to coordinate
+> operations of other personnel and vehicles carrying out a service.

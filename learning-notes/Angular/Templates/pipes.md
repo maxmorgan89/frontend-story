@@ -3,7 +3,7 @@
 Pipes are simple functions to use in template expressions to accept an input value and return
 a transformed value.
 
-### Options
+### Pipe Decorator Options
 
 ###### name: string
 
