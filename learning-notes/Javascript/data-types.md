@@ -52,7 +52,8 @@ since a floating-point value uses twice as much memory as an integer value.
 
 The JavaScript **Number.EPSILON** property
 represents the difference between 1 and the smallest floating point number greater than 1.
-**Number.EPSILON** can be used to test the equality of the floating-point numbers (but there is an issue with it).
+**Number.EPSILON** can be used to test the equality of the floating-point numbers (but there
+is an issue with it).
 
 ```typescript
 console.log(Number.EPSILON); // 2.220446049250313e-16

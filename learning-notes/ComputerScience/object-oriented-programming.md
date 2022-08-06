@@ -18,13 +18,18 @@ as "templates" to create objects.
 Plus, objects can contain data in the form of fields
 (also known as attributes)
 and code in the form of procedures (also named methods).
-###\* Instance
+
+### \* Instance
+
 Instance is a concrete occurrence of any object, existing usually during the runtime of a computer program.
 Formally, "instance" is synonymous with "object" as they are each a particular value (realization),
 and these may be called an instance object; "instance" emphasizes the distinct identity of the object.
 The creation of an instance is called instantiation.
-###\* Method
-###\* Abstract Class
+
+### \* Method
+
+### \* Abstract Class
+
 Abstract class is only available in typescript.
 
 - Abstract classes can be defined as classes that cannot be instantiated
@@ -95,13 +100,18 @@ for a hierarchy of classes that share a set of attributes and methods.
   has to read and understand a program whose inheritance graph is so long
   and complicated that the programmer has to keep flipping between
   many different class definitions in order to follow the control flow of the program.
-  ###\*\* Abstraction
-  Hides complex details to reduce complexity.
-  ###\* SOLID
-  SOLID is an acronym for the first five object-oriented design (OOD)
-  principles by Robert C. Martin.
-  These principles establish practices that lend to developing software
-  with considerations for maintaining and extending as the project grows.
+
+### \*\* Abstraction
+
+Hides complex details to reduce complexity.
+
+### \*\* SOLID
+
+SOLID is an acronym for the first five object-oriented design (OOD)
+principles by Robert C. Martin.
+These principles establish practices that lend to developing software
+with considerations for maintaining and extending as the project grows.
+
 - **Single-Responsibility** - a class should have one and only one reason to change,
   meaning that a class should have only one job.
 - **Open-Closed** - objects or entities should be open for extension
@@ -116,21 +126,23 @@ for a hierarchy of classes that share a set of attributes and methods.
   both will depend on abstractions. Entities must depend on abstractions, not on concretions.
   ###\*** [Coupling and Cohesion](https://home.adelphi.edu/sbloch/class/adages/coupling_cohesion.html)
   **Coupling** describes the relationships between modules,
-  and **cohesion** describes the relationships within them.
+  and **cohesion\*\* describes the relationships within them.
   A reduction in interconnectedness between modules (or classes)
   is therefore achieved via a reduction in coupling.
   On the other hand, well-designed modules (or classes) should have some purpose;
   all the elements should be associated with a single task.
   This means that in a good design, the elements within a module (or class)
   should have internal cohesion.
-  ###\*** [Inversion of control principle](https://www.educative.io/edpresso/what-is-inversion-of-control)
-  One of the major principles of Software Engineering is that classes should have
-  minimum interdependence, i.e., low coupling. Inversion of Control (IoC)
-  is a design principle that allows classes to be loosely coupled and,
-  therefore, easier to test and maintain. IoC refers to transferring the control
-  of objects and their dependencies from the main program to a container
-  or framework. IoC is a principle, not a design pattern – the implementation
-  details depend on the developer. All IoC does is provide high-level guidelines.
+
+### \*\*\* [Inversion of control principle](https://www.educative.io/edpresso/what-is-inversion-of-control)
+
+One of the major principles of Software Engineering is that classes should have
+minimum interdependence, i.e., low coupling. Inversion of Control (IoC)
+is a design principle that allows classes to be loosely coupled and,
+therefore, easier to test and maintain. IoC refers to transferring the control
+of objects and their dependencies from the main program to a container
+or framework. IoC is a principle, not a design pattern – the implementation
+details depend on the developer. All IoC does is provide high-level guidelines.
 
 ![Inversion of control](images/inversion-of-control.png)
 

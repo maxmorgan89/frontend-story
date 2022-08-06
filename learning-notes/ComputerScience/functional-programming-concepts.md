@@ -76,8 +76,8 @@ console.log(output_final);
 
 This is similar to the previous compose function,
 except that it uses `reduce` instead of the `reduceRight` method.
-The output is different in this case because the square function is invoked before the double function while,
-in our compose function, it was in the opposite order.
+The output is different in this case because the square function is invoked before the
+double function while, in our compose function, it was in the opposite order.
 
 ### \* Pure function
 
@@ -89,13 +89,17 @@ A pure function is a function which:
 Pure functions are all about mapping. Functions map input arguments to return values,
 meaning that for each set of inputs, there exists an output.
 
-A dead giveaway that a function is impure is if it makes sense to call it without using its return value.
-For pure functions, that’s a noop.
-###\* Higher-order function
+A dead giveaway that a function is impure is if it makes sense to call it without using its
+return value. For pure functions, that’s a noop.
+
+### \* Higher-order function
+
 A higher order function is a function that takes a function as an argument, or returns a function.
 Higher order function is in contrast to first order functions,
 which don’t take a function as an argument or return a function as output.
-###\*\* Pros and cons of FP comparing to OOP and procedural languages. Main use cases.
+
+### \*\* Pros and cons of FP comparing to OOP and procedural languages. Main use cases.
+
 Functional programming relies on functions, whereas object-oriented programming is
 based on classes and respective objects.
 A function is a process that retrieves a data input, processes it, and then returns an output.
@@ -109,8 +113,8 @@ A function is a process that retrieves a data input, processes it, and then retu
 | Functional programming writes pure functions. Pure functions only produce outputs with identical inputs. Consequently, functional programming is extremely operational, practical, and, as the name indicates, functional. | OOP is not as operational as Functional programming. In fact, OOP stores data in objects, and the data is prioritized over the operations.                                            |
 
 Declarative programming is a programming paradigm that declares what the program has to accomplish.
-It does not declare how the program should accomplish a certain computation throughout the control flow;
-it just declares what it wants without explaining how to get it.
+It does not declare how the program should accomplish a certain computation throughout the 
+control flow; it just declares what it wants without explaining how to get it.
 In contrast, imperative programming relies on a sequence of statements to modify a program's state,
 providing a detailed description for each step on how to accomplish a certain goal.
 
@@ -118,7 +122,8 @@ Procedural programming is an imperative programming paradigm built around the id
 that programs are sequences of instructions to be executed.
 They focus heavily on splitting up programs into named sets of instructions called procedures,
 analogous to functions. A procedure can store local data
-that is not accessible from outside the procedure’s scope and can also access and modify global data variables.
+that is not accessible from outside the procedure’s scope and can also access and modify global 
+data variables.
 
 ### \*\* Curried function
 
@@ -156,11 +161,12 @@ But our functions are wrapped in a container too!
 A tail call is a function call that appears at the tail of another function,
 such that after the call finishes, there’s nothing left to do.
 
-Calling a new function requires an extra amount of reserved memory to manage the called a stack frame.
-So the preceding snippet would generally require a stack frame for each call.
-However, if a TailCallOptimisation-capable engine can realize that the doA(b+1) call is in tail position
-meaning doB(b) is basically complete, then when calling doA(b+1), it does not need to create a new stack frame,
-but can instead reuse the existing stack frame from doB(b). That’s faster and uses less memory.
+Calling a new function requires an extra amount of reserved memory to manage the called a
+stack frame. So the preceding snippet would generally require a stack frame for each call.
+However, if a TailCallOptimisation-capable engine can realize that the doA(b+1) call is in tail 
+position meaning doB(b) is basically complete, then when calling doA(b+1), it does not need to 
+create a new stack frame, but can instead reuse the existing stack frame from doB(b). That’s 
+faster and uses less memory.
 
 ```typescript
 function doA(a) {
@@ -196,7 +202,7 @@ you start creating a full copy of the object "just in case" and pass that copy a
 even if it turns out no property has to be changed at all.
 That will leave a lot more garbage.
 
-- If you design a data structure with only a few attributes based on primitive or other immutable types,
-  try immutability first.
+- If you design a data structure with only a few attributes based on primitive or other
+  immutable types, try immutability first.
 - If you want to design a data type where arrays with large (or undefined) size,
   random access and changing contents are involved, use mutability.

@@ -89,7 +89,8 @@ alert(typeof User); // function
 What class User {...} construct really does is:
 
 1. Creates a function named User, that becomes the result of the class declaration.
-   The function code is taken from the constructor method (assumed empty if we don’t write such method).
+   The function code is taken from the constructor method (assumed empty if we don’t write
+   such method).
 2. Stores class methods, such as sayHi, in User.prototype.
    After new User object is created, when we call its method, it’s taken from the prototype.
 
@@ -98,9 +99,10 @@ What class User {...} construct really does is:
 Sometimes people say that class is a “syntactic sugar”, because we could actually declare
 the same thing without using the class keyword at all, like with `function`.
 
-1. First, a function created by class is labelled by a special internal property `[[IsClassConstructor]]`: `true`.
-   So it’s not entirely the same as creating it manually. The language checks for that property in a variety of places.
-   For example, unlike a regular function, it must be called with `new`
+1. First, a function created by class is labelled by a special internal property
+   `[[IsClassConstructor]]`: `true`.
+   So it’s not entirely the same as creating it manually. The language checks for that property
+   in a variety of places. For example, unlike a regular function, it must be called with `new`
 2. Class methods are non-enumerable. A class definition sets enumerable flag to `false`
    for all methods in the `prototype`.
    That’s good, because if we `for..in` over an object, we usually don’t want its class methods.
@@ -209,8 +211,8 @@ The OR operator `||` uses the right value if left is falsy.
 ### \*\* Optional chaining
 
 The optional chaining operator `?.` enables you to read the value of a property located deep
-within a chain of connected objects without having to check that each reference in the chain is valid.
-Instead of causing an error if a reference is nullish (`null` or `undefined`),
+within a chain of connected objects without having to check that each reference in the chain is
+valid. Instead of causing an error if a reference is nullish (`null` or `undefined`),
 the expression short-circuits with a return value of `undefined`.
 When used with function calls, it returns `undefined` if the given function does not exist.
 

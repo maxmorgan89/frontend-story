@@ -28,7 +28,8 @@ Object properties, besides a value, have three special attributes (so-called “
 - `enumerable` – if `true`, then listed in loops, otherwise not listed.
 - `configurable` – if `true`, the property can be deleted and these attributes can be modified,
   otherwise not. Value can be modified in any case.
-  Making a property non-configurable is a **one-way road**. We cannot change it back with `Object.defineProperty`.
+  Making a property non-configurable is a **one-way road**. We cannot change it back with
+  `Object.defineProperty`.
 
 To change the flags, we can use `Object.defineProperty` or `Object.defineProperties`.
 
@@ -50,7 +51,8 @@ Object.defineProperties(obj, {
 ```
 
 The method `Object.getOwnPropertyDescriptor` allows to query the full information about a property.
-To get all property descriptors at once, we can use the method `Object.getOwnPropertyDescriptors(obj)`.
+To get all property descriptors at once, we can use the method
+`Object.getOwnPropertyDescriptors(obj)`.
 Returns all property descriptors, including symbolic and non-enumerable ones.
 Together with `Object.defineProperties` it can be used as a “flags-aware” way of cloning an object:
 
@@ -64,7 +66,8 @@ Property descriptors work at the level of individual properties.
 There are also methods that limit access to the whole object:
 
 - `Object.preventExtensions(obj)` - forbids the addition of new properties to the object.
-- `Object.seal(obj)` - forbids adding/removing of properties. Sets configurable: false for all existing properties.
+- `Object.seal(obj)` - forbids adding/removing of properties. Sets configurable: false for
+  all existing properties.
 - `Object.freeze(obj)` - forbids adding/removing/changing of properties.
   Sets configurable: false, writable: false for all existing properties.
 

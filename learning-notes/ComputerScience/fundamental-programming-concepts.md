@@ -7,9 +7,9 @@ Strict equality using ===
 Strict equality compares two values for equality.
 Neither value is implicitly converted to some other value before being compared.
 If the values have different types, the values are considered unequal.
-If the values have the same type, are not numbers, and have the same value, they're considered equal.
-Finally, if both values are numbers,
-they're considered equal if they're both not NaN and are the same value, or if one is `+0` and one is `-0`.
+If the values have the same type, are not numbers, and have the same value, they're considered
+equal. Finally, if both values are numbers, they're considered equal if they're both not NaN
+and are the same value, or if one is `+0` and one is `-0`.
 
 Loose equality using ==
 
@@ -44,7 +44,8 @@ by recursively the first adjacent node of each vertex found.
 
 ![BigOComplexity](images/big-o-complexity.jpeg)
 
-Big O notation is one of the most fundamental tools for computer scientists to analyze the cost of an algorithm.
+Big O notation is one of the most fundamental tools for computer scientists to analyze the
+cost of an algorithm.
 
 > Big O notation is a mathematical notation that describes the limiting behavior
 > of a function when the argument tends towards a particular value or infinity.
@@ -60,12 +61,13 @@ Big O notation is one of the most fundamental tools for computer scientists to a
 - Little O (o()) describes the upper bound excluding the exact bound.
 
 Generally, when we talk about Big O, what we actually meant is Theta.
-It is kind of meaningless when you give an upper bound that is way larger than the scope of the analysis.
-This would be similar to solving inequalities by putting ∞ on the larger side,
+It is kind of meaningless when you give an upper bound that is way larger than the scope
+of the analysis. This would be similar to solving inequalities by putting ∞ on the larger side,
 which will almost always make you right.
 
 When we are trying to figure out the Big O for a particular function `g(n)`,
-we only care about the dominant term of the function. The dominant term is the term that grows the fastest.
+we only care about the dominant term of the function. The dominant term is the term that
+grows the fastest.
 
 For example, `n²` grows faster than `n`,
 so if we have something like `g(n) = n² + 5n + 6`, it will be big `O(n²)`.
@@ -87,11 +89,11 @@ where you only care about the dominant term for numerators and denominators in t
    because the square root function can be considered a polynomial, where the exponent is `0.5`.
 3. Complexity of polynomials increases as the exponent increases.
    For example, `O(n⁵)` is more complex than `O(n⁴)`.
-4. Exponentials have greater complexity than polynomials as long as the coefficients are positive multiples of n.
-   `O(2ⁿ)` is more complex than `O(n⁹⁹)`, but `O(2ⁿ)` is actually less complex than `O(1)`.
-   We generally take 2 as base for exponentials and logarithms because things tends to be binary in Computer Science,
-   but exponents can be changed by changing the coefficients.
-   If not specified, the base for logarithms is assumed to be 2.
+4. Exponentials have greater complexity than polynomials as long as the coefficients are
+   positive multiples of n. `O(2ⁿ)` is more complex than `O(n⁹⁹)`, but `O(2ⁿ)` is actually less
+   complex than `O(1)`. We generally take 2 as base for exponentials and logarithms because
+   things tends to be binary in Computer Science, but exponents can be changed by changing the
+   coefficients. If not specified, the base for logarithms is assumed to be 2.
 5. Factorials have greater complexity than exponentials.
 6. Multiplying terms. When multiplying, the complexity will be greater than the original,
    but no more than the equivalence of multiplying something that is more complex.
@@ -119,8 +121,8 @@ In the end the sorted array will be the sorted list elements repeated by their c
 
 #### Why BigO does not matter
 
-Big O notation is only a mathematical analysis to provide a reference on the resources consumed by the algorithm.
-Practically, the results may be different.
+Big O notation is only a mathematical analysis to provide a reference on the resources
+consumed by the algorithm. Practically, the results may be different.
 But it is generally a good practice trying to chop down the complexity of our algorithms,
 until we run into a case where we know what we are doing.
 

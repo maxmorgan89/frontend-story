@@ -13,13 +13,18 @@ this chain
 - When data may be updated from server on push
 - When the same data has to be used in different modules or components (independent siblings)
 
-### What problems do they solve
+### What problems it solves
 
 - Solve the problem of component interaction via the Observable pattern
 - Provide a client-side cache if needed, to avoid doing repeated Ajax requests
 - Provide a place to put temporary UI state, as we fill in a large form or want to store 
   search criteria in a search form when navigating between router views
 - Solve the problem of allowing modification of client side transient data by multiple actors
+
+### Tradeoffs
+
+- Store is an application wide singleton service
+- We need to clean it up in all the right places, and that does not scale well in complexity
 
 ### Alternative solutions in Angular
 

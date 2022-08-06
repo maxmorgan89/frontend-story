@@ -20,7 +20,7 @@ in the prototype chain as well. Since the objects in JavaScript can inherit prop
 from their prototypes, the for...in statement will loop through those properties as well.
 
 To avoid this problem, you have to explicitly check if the property belongs to
-the object by using the hasOwnProperty() method:
+the object by using the `hasOwnProperty()` method:
 
 ```typescript
 for (const key in user) {
@@ -30,12 +30,13 @@ for (const key in user) {
 }
 ```
 
-To overcome this hassle, later in ES8, two other methods were added, Object.entries() and Object.values().
+To overcome this hassle, later in ES8, two other methods were added, `Object.entries()`
+and `Object.values()`.
 
 #### Object.keys method
 
-Before ES6, the only way to loop through an object was through using the for...in loop.
-The Object.keys() method was introduced in ES6 to make it easier to loop over objects.
+Before ES6, the only way to loop through an object was through using the `for...in` loop.
+The `Object.keys()` method was introduced in ES6 to make it easier to loop over objects.
 
 It takes the object that you want to loop over as an argument and returns an
 array containing all properties names (or keys).
@@ -49,7 +50,7 @@ keys.forEach((key, index) => {
 
 #### Object.values method
 
-The Object.values() method was introduced in ES8 and it works opposite to that of Object.key().
+The `Object.values()` method was introduced in ES8, and it works opposite to that of `Object.key()`.
 It returns the values of all properties in the object as an array.
 You can then loop through the values array by using any of the array looping methods.
 
@@ -172,14 +173,15 @@ alert(arr); // 1,4,9,16,25
 
 #### Async iterables
 
-Asynchronous iteration is needed when values come asynchronously: after `setTimeout` or another kind of delay.
-The most common case is that the object needs to make a network request to deliver the next value.
-To make an object iterable asynchronously:
+Asynchronous iteration is needed when values come asynchronously: after `setTimeout` or another
+kind of delay. The most common case is that the object needs to make a network request to
+deliver the next value. To make an object iterable asynchronously:
 
 - Use `Symbol.asyncIterator` instead of `Symbol.iterator`.
 - The `next()` method should return a `promise` (to be fulfilled with the next value).
   The `async` keyword handles it, we can simply make `async next()`.
-- To iterate over such an object, we should use a `for await (let item of iterable)` loop. Note the `await` word.
+- To iterate over such an object, we should use a `for await (let item of iterable)` loop.
+  Note the `await` word.
 
 ```typescript
 let range = {
@@ -221,7 +223,8 @@ As we can see, the structure is similar to regular iterators:
 1. To make an object asynchronously iterable, it must have a method `Symbol.asyncIterator` `(1)`.
 2. This method must return the object with `next()` method returning a `promise` `(2)`.
 3. The `next()` method doesn’t have to be `async`, it may be a regular method returning a `promise`,
-   but `async` allows us to use `await`, so that’s convenient. Here we just delay for a second `(3)`.
+   but `async` allows us to use `await`, so that’s convenient. Here we just delay
+   for a second `(3)`.
 4. To iterate, we use for await(let value of range) `(4)`, namely add “await” after “for”.
    It calls `range[Symbol.asyncIterator]()` once, and then its `next()` for values.
 

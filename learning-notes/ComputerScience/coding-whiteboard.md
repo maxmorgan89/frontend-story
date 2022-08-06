@@ -2,7 +2,8 @@
 
 ### \* Implement an isPalindrome function
 
-A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.
+A palindrome is a word, phrase, number, or other sequence of characters which reads the same
+backward or forward.
 
 > Note: You’ll need to remove all non-alphanumeric characters (punctuation, spaces and symbols)
 > and turn everything lowercase in order to check for palindromes.
@@ -105,7 +106,8 @@ Problems with cloning:
 
 ```
 
-### \*\* Implement a chunk function that creates an array of elements split into groups the 
+### \*\* Implement a chunk function that creates an array of elements split into groups the
+
 length of size
 
 ```typescript
@@ -119,13 +121,16 @@ length of size
 ```
 
 ### \*\*\* [Binary search tree](https://www.digitalocean.com/community/tutorials/js-binary-search-trees)
-In computer science, a tree is a widely used abstract data type that simulates a hierarchical tree structure,
-with a root value and subtrees of children with a parent node, represented as a set of linked nodes.
 
-A binary tree is a tree data structure that includes nodes with at most two children i.e. a right and left child.
+In computer science, a tree is a widely used abstract data type that simulates a hierarchical tree
+structure, with a root value and subtrees of children with a parent node, represented as a set
+of linked nodes.
 
-A binary search tree just has the additional rule that if there’s two values then they need to be ordered,
-in our case from the lower number on the left to the higher on the right.
+A binary tree is a tree data structure that includes nodes with at most two children i.e. a
+right and left child.
+
+A binary search tree just has the additional rule that if there’s two values then they need to
+be ordered, in our case from the lower number on the left to the higher on the right.
 Searching on a binary search tree is a large improvement on
 our original `O(n)` search speed since now to find something we
 just need to compare what we want to each parent node before
@@ -191,7 +196,8 @@ console.log(tree);
 ##### Find
 
 Finding something is incredibly simple,
-just move left or right relative to the current value and return `true` if we hit something that matches.
+just move left or right relative to the current value and return `true` if we hit something
+that matches.
 
 ```typescript
 function find(val) {
@@ -248,9 +254,11 @@ let BreadthFirstSearch = (tree, rootNode, searchValue) => {
 #### Delete
 
 [See link.](https://www.digitalocean.com/community/tutorials/js-binary-search-trees)
-###\*\*\* [Implement a memoize function that takes in a function and returns a memoized one](https://www.section.io/engineering-education/an-introduction-to-memoization-in-javascript/)
-Memoization is a technique of caching results of expensive function calls to speed up computer programs
-by returning the cached result when the same input occurs again.
+
+### \*\*\* [Implement a memoize function that takes in a function and returns a memoized one](https://www.section.io/engineering-education/an-introduction-to-memoization-in-javascript/)
+
+Memoization is a technique of caching results of expensive function calls to speed up computer
+programs by returning the cached result when the same input occurs again.
 
 When a function is called,
 memoization stores the function results before it returns the result to the function caller.

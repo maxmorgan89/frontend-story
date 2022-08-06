@@ -1,8 +1,8 @@
 ### \*\*\* [Proxy](https://javascript.info/proxy)
 
 A Proxy object wraps another object and intercepts operations, like reading/writing properties
-and others, optionally handling them on its own, or transparently allowing the object to handle them.
-It can wrap any kind of object, including classes and functions.
+and others, optionally handling them on its own, or transparently allowing the object to
+handle them. It can wrap any kind of object, including classes and functions.
 
 ```typescript
 let proxy = new Proxy(target, handler);
@@ -10,17 +10,18 @@ let proxy = new Proxy(target, handler);
 
 - `target` – is an object to wrap, can be anything, including functions.
 - `handler` – proxy configuration: an object with “traps”, methods that intercept
-  operations. – e.g. `get` trap for reading a property of target, `set` trap for writing a property into target, and so on.
+  operations. – e.g. `get` trap for reading a property of target, `set` trap for writing
+  a property into target, and so on.
 
 Without any traps, proxy is a transparent wrapper around target:
 ![Proxy wrapper](images/proxy.png)
 Proxy is a special “exotic object”. It doesn’t have own properties.
 With an empty handler it transparently forwards operations to target.
 
-For most operations on objects, there’s a so-called “internal method” in the JavaScript specification
-that describes how it works at the lowest level. For instance `[[Get]]`, the internal method
-to read a property, `[[Set]]`, the internal method to write a property, and so on.
-These methods are only used in the specification, we can’t call them directly by name.
+For most operations on objects, there’s a so-called “internal method” in the JavaScript
+specification that describes how it works at the lowest level. For instance `[[Get]]`,
+the internal method to read a property, `[[Set]]`, the internal method to write a property,
+and so on. These methods are only used in the specification, we can’t call them directly by name.
 
 Proxy traps intercept invocations of these methods.
 
@@ -40,8 +41,8 @@ Proxy traps intercept invocations of these methods.
 | `[[GetOwnProperty]]`    | `getOwnPropertyDescriptor` | `Object.getOwnPropertyDescriptor`, `for..in`, `Object.keys/values/entries`                            |
 | `[[OwnPropertyKeys]]`   | `ownKeys`                  | `Object.getOwnPropertyNames`, `Object.getOwnPropertySymbols`, `for..in`, `Object.keys/values/entries` |
 
-JavaScript enforces some invariants – conditions that must be fulfilled by internal methods and traps.
-ost of them are for return values:
+JavaScript enforces some invariants – conditions that must be fulfilled by internal methods
+and traps. Most of them are for return values:
 
 - `[[Set]]` must return true if the value was written successfully, otherwise false.
 - `[[Delete]]` must return true if the value was deleted successfully, otherwise false.
@@ -78,7 +79,8 @@ alert(numbers[123]); // 0 (no such item)
 
 #### Proxy limitations
 
-Many built-in objects, for example `Map`, `Set`, `Date`, `Promise` and others make use of so-called “_internal slots_”.
+Many built-in objects, for example `Map`, `Set`, `Date`, `Promise` and others make use of
+so-called “_internal slots_”.
 
 These are like properties, but reserved for internal, specification-only purposes.
 For instance, `Map` stores items in the internal slot `[[MapData]]`. Built-in methods access
@@ -135,7 +137,8 @@ alert(proxy.data); // Error
 A call to `revoke()` removes all internal references to the target object from the proxy,
 so they are no longer connected.
 
-Initially, `revoke` is separate from `proxy`, so that we can pass proxy around while leaving revoke in the current scope.
+Initially, `revoke` is separate from `proxy`, so that we can pass proxy around while leaving
+revoke in the current scope.
 
 ### Reflect
 
@@ -143,7 +146,8 @@ Initially, `revoke` is separate from `proxy`, so that we can pass proxy around w
 
 It was said previously that internal methods, such as `[[Get]]`, `[[Set]]` and others are
 specification-only, they can’t be called directly.
-The `Reflect` object makes that somewhat possible. Its methods are minimal wrappers around the internal methods.
+The `Reflect` object makes that somewhat possible. Its methods are minimal wrappers around
+the internal methods.
 
 In particular, Reflect allows us to call operators (`new`, `delete`…) as functions
 (`Reflect.construct`,`Reflect.deleteProperty`, …).

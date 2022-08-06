@@ -146,11 +146,13 @@ so we must put in something like `null`.
 The benefit is that we can create an independent function with a readable name (`double`, `triple`).
 We can use it and not provide the first argument every time as it’s fixed with `bind`.
 
-In other cases, partial application is useful when we have a very generic function and want a less universal variant of it for convenience.
+In other cases, partial application is useful when we have a very generic function and want a
+less universal variant of it for convenience.
 
 ###### Going partial without context
 
-What if we’d like to fix some arguments, but not the context `this`? For example, for an object method.
+What if we’d like to fix some arguments, but not the context `this`? For example, for an object
+method.
 
 The native `bind` does not allow that. We can’t just omit the context and jump to arguments.
 
@@ -196,7 +198,8 @@ Function has some properties:
 
 We can also add properties to function of our own.
 
-> A property assigned to a function like `sayHi.counter = 0` does not define a local variable`counter`
-> inside it. In other words, a property `counter` and a variable `let counter`are two unrelated things.
-> We can treat a function as an object, store properties in it, but that has no effect on its execution.
-> Variables are not function properties and vice versa. These are just parallel worlds.
+> A property assigned to a function like `sayHi.counter = 0` does not define a local
+> variable`counter` inside it. In other words, a property `counter` and a variable `let 
+> counter`are two unrelated things. We can treat a function as an object, store properties in it,
+> but that has no effect on its execution. Variables are not function properties and vice versa.
+> These are just parallel worlds.

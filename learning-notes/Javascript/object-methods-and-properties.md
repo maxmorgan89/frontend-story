@@ -31,7 +31,8 @@ n.constructor === Number; // true
 #### Object.prototype.**proto**
 
 > Deprecated: This feature is no longer recommended. Though some browsers might still support it,
-> it may have already been removed from the relevant web standards, or may only be kept for compatibility purposes.
+> it may have already been removed from the relevant web standards, or may only be kept
+> for compatibility purposes.
 
 The `__proto__` property of `Object.prototype` is an accessor property (a getter function
 and a setter function) that exposes the internal `[[Prototype]]` (either an object or null)
@@ -60,8 +61,8 @@ console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
 
-Properties in the target object are overwritten by properties in the sources if they have the same key.
-Later sources' properties overwrite earlier ones.
+Properties in the target object are overwritten by properties in the sources if they have
+the same key. Later sources' properties overwrite earlier ones.
 
 The `Object.assign()` method only copies enumerable and own properties from a source object to
 a target object. It uses `[[Get]]` on the source and `[[Set]]` on the target, so it will
@@ -110,12 +111,13 @@ Returns a Boolean indicating whether or not the two arguments are the same value
 
 This is not the same as being equal according to the `==` operator. The `==` operator applies
 various coercions to both sides (if they are not the same Type) before testing for equality
-(resulting in such behavior as `"" == false` being `true`), but `Object.is` doesn't coerce either value.
+(resulting in such behavior as `"" == false` being `true`), but `Object.is` doesn't coerce
+either value.
 
 This is also not the same as being equal according to the `===` operator. The only difference
 between `Object.is()` and `===` is in their treatment of signed zeroes and NaNs.
-For example, the `===` operator (and the `==` operator) treats the number values `-0` and `+0` as equal.
-Also, the `===` operator treats `Number.NaN` and `NaN` as not equal.
+For example, the `===` operator (and the `==` operator) treats the number values `-0` and
+`+0` as equal. Also, the `===` operator treats `Number.NaN` and `NaN` as not equal.
 
 ```typescript
 // Case 1: Evaluation result is the same as using ===
@@ -144,8 +146,8 @@ Object.is(NaN, Number.NaN); // true
 
 #### Object.getPrototypeOf(obj)
 
-Returns the prototype (i.e. the value of the internal `[[Prototype]]` property) of the specified object.
-If there are no inherited properties, `null` is returned.
+Returns the prototype (i.e. the value of the internal `[[Prototype]]` property) of the
+specified object. If there are no inherited properties, `null` is returned.
 
 ```typescript
 const proto = {};
@@ -158,8 +160,9 @@ Object.getPrototypeOf(obj) === proto; // true
 method sets the prototype (i.e., the internal `[[Prototype]]` property) of a specified
 object to another object or `null`.
 
-> **Warning**: Changing the [[Prototype]] of an object is, by the nature of how modern JavaScript engines
-> optimize property accesses, currently a very slow operation in every browser and JavaScript engine.
+> **Warning**: Changing the [[Prototype]] of an object is, by the nature of how modern
+> JavaScript engines optimize property accesses, currently a very slow operation in every
+> browser and JavaScript engine.
 
 #### Object.isExtensible(obj)
 
@@ -167,7 +170,8 @@ Method determines if an object is extensible (whether it can have new properties
 
 #### Object.preventExtensions(obj)
 
-Method prevents new properties from ever being added to an object (i.e. prevents future extensions to the object).
+Method prevents new properties from ever being added to an object (i.e. prevents future
+extensions to the object).
 
 #### Object.defineProperty(obj, propertyName | Symbol, descriptor)
 
@@ -209,7 +213,8 @@ Object.defineProperties(obj, {
 
 Method returns an object describing the configuration of a specific property on a given object
 (that is, one directly present on an object and not in the object's prototype chain).
-The object returned is mutable but mutating it has no effect on the original property's configuration.
+The object returned is mutable but mutating it has no effect on the original property's
+configuration.
 
 #### Object.getOwnPropertyDescriptors(obj)
 
@@ -235,8 +240,9 @@ console.log(object1.hasOwnProperty('toString'));
 
 #### Object.hasOwn(instance, propName | Symbol)
 
-The `Object.hasOwn()` static method returns `true` if the specified object has the indicated property
-as its own property. If the property is inherited, or does not exist, the method returns `false`.
+The `Object.hasOwn()` static method returns `true` if the specified object has the indicated 
+property as its own property. If the property is inherited, or does not exist, the method 
+returns `false`.
 
 ```typescript
 let example = {};
@@ -263,8 +269,9 @@ Items on the prototype chain are not listed.
 #### Object.getOwnPropertySymbols(obj)
 
 Method returns an array of all symbol properties found directly upon a given object.
-As all objects have no own symbol properties initially (only global Symbols), `Object.getOwnPropertySymbols()`
-returns an empty array unless you have set symbol properties on your object.
+As all objects have no own symbol properties initially (only global Symbols),
+`Object.getOwnPropertySymbols()` returns an empty array unless you have set symbol properties on 
+your object.
 
 ####
 

@@ -4,8 +4,9 @@
 
 ## \*\* Stack
 
-Stack follows the principle of LIFO (Last In First Out). If you stack books, the top book will be taken before the bottom one. Or when you browse on internet, the back button leads you to the most recently browsed page.
-Stack has these common methods:
+Stack follows the principle of LIFO (Last In First Out). If you stack books, the top book will
+be taken before the bottom one. Or when you browse on internet, the back button leads you to
+the most recently browsed page. Stack has these common methods:
 
 - `push`: input a new element
 - `pop` : remove the top element, return the removed element
@@ -90,8 +91,8 @@ Allocate each element with priority, and it will be sorted according to the prio
 
 ## \*\* List
 
-Literally, a linked list is a chained data structure, with each node consisting of two pieces of information:
-the data of the node and the pointer to the next node.
+Literally, a linked list is a chained data structure, with each node consisting of two pieces
+of information: the data of the node and the pointer to the next node.
 Linked list and conventional array are both linear data structures with serialised storage.
 Of course, they also have differences:
 
@@ -103,7 +104,8 @@ Of course, they also have differences:
 | Spatial(space) structure | 1 dimension or multi-dimension                                    | Unilateral/bilateral (one way or two ways), or circular linked list             |
 
 Circular Linked List is a variation of Linked list
-in which the first element points to the last element and the last element points to the first element.
+in which the first element points to the last element and the last element points to the first
+element.
 
 A unilateral linked list normally has the following methods:
 
@@ -123,8 +125,8 @@ A unilateral linked list normally has the following methods:
 A hash table is a key-value data structure.
 Due to the lightning speed of querying a value through key,
 it is commonly used in Map, Dictionary or Object data structures.
-As shown in the graph above, the hash table uses a `hash function` to convert keys into a list of numbers,
-and these numbers serve as the values of corresponding keys.
+As shown in the graph above, the hash table uses a `hash function` to convert keys into a list
+of numbers, and these numbers serve as the values of corresponding keys.
 To get value using key is dashingly fast, time complexity can achieve O(1).
 The same keys must return the same values — this is the basis of the hash function.
 
@@ -140,8 +142,8 @@ The hash table has the following methods:
 
 Tree data structure is a multi-layer structure.
 It is also a non-linear data structure,
-compared to Array, Stack, and Queue. This structure is highly efficient during insert and search operations.
-Let’s take a look at some concepts of tree data structure:
+compared to Array, Stack, and Queue. This structure is highly efficient during insert and search
+operations. Let’s take a look at some concepts of tree data structure:
 
 - `root`: Root node of a tree, no parent node for root
 - `parent node`: Direct node of the upper layer, only has one
@@ -161,7 +163,8 @@ Let’s take a look at some concepts of tree data structure:
 
 Trie, or “Prefix Tree”, is also a type of search tree.
 Trie stores the data step-by-step — each node in the tree represents a step.
-Trie is used in storing vocabulary, it can be quickly searched, especially for an auto-complete function.
+Trie is used in storing vocabulary, it can be quickly searched, especially for an
+auto-complete function.
 
 Each node in Trie has an alphabet — following the branch can form a complete word.
 It also comprises a boolean indicator to show whether is this the last alphabet.
