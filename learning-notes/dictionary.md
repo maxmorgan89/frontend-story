@@ -27,3 +27,7 @@
  
 > **Dispatcher** - a communications worker who receives and transmits information to coordinate
 > operations of other personnel and vehicles carrying out a service.
+ 
+> **Distinct** - recognizably different in nature from something else of a similar type.
+> "_a distinct smell of nicotine_"
+> > **Synonyms**: clear, well-defined, obvious, unmistakable
