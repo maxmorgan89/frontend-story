@@ -124,15 +124,17 @@ with considerations for maintaining and extending as the project grows.
 - **Dependency Inversion** - refers to the decoupling of software modules.
   This way, instead of high-level modules depending on low-level modules,
   both will depend on abstractions. Entities must depend on abstractions, not on concretions.
-  ###\*** [Coupling and Cohesion](https://home.adelphi.edu/sbloch/class/adages/coupling_cohesion.html)
-  **Coupling** describes the relationships between modules,
-  and **cohesion\*\* describes the relationships within them.
-  A reduction in interconnectedness between modules (or classes)
-  is therefore achieved via a reduction in coupling.
-  On the other hand, well-designed modules (or classes) should have some purpose;
-  all the elements should be associated with a single task.
-  This means that in a good design, the elements within a module (or class)
-  should have internal cohesion.
+  
+### \*\*\* [Coupling and Cohesion](https://home.adelphi.edu/sbloch/class/adages/coupling_cohesion.html)
+
+**Coupling** describes the relationships between modules,
+and **cohesion\*\* describes the relationships within them.
+A reduction in interconnectedness between modules (or classes)
+is therefore achieved via a reduction in coupling.
+On the other hand, well-designed modules (or classes) should have some purpose;
+all the elements should be associated with a single task.
+This means that in a good design, the elements within a module (or class)
+should have internal cohesion.
 
 ### \*\*\* [Inversion of control principle](https://www.educative.io/edpresso/what-is-inversion-of-control)
 

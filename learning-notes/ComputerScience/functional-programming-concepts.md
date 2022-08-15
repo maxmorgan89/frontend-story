@@ -31,11 +31,15 @@ This is typically a side effect of changing the order of functions calls, which 
 Introducing pure functions following the functional programming paradigm helps us avoid shared state,
 thus avoiding issues such as cascading function errors,
 potential race conditions, and situations where state is stale.
-###\* Side effect
+
+### \* Side effect
+
 A side effect is the modification of state through the invocation of a function or expression.
 In order for a function or expression to have a side effect, the state it modifies should be out of its local scope.
 Such as passing an object by reference through functions to be mutated and performing I/O operations.
-###\* Function Composition
+
+### \* Function Composition
+
 Function composition is the process of combining two or more functions to produce a new function.
 Composing functions together is like snapping together a series of pipes for our data to flow through.
 
