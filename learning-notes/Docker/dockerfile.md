@@ -152,6 +152,75 @@ EXPOSE 80/tcp
 EXPOSE 80/udp
 ```
 
+### ARG
+
+```shell
+ARG <name>[=<default value>]
+```
+
+The ARG instruction defines a variable that users can pass at build-time to the builder with 
+the docker build command using the `--build-arg <varname>=<value>` flag. If a user specifies a 
+build argument that was not defined in the `Dockerfile`, the build outputs a warning.
+
+```dockerfile
+FROM busybox
+ARG user1
+ARG buildno
+```
+
+###### Default values
+
+If an ARG instruction has a default value and if there is no value passed at build-time, the 
+builder uses the default.
+
+```dockerfile
+FROM busybox
+ARG user1=someuser
+ARG buildno=1
+```
+
+### ENV
+
+The `ENV` instruction sets the environment variable `<key>` to the value `<value>`. This value will 
+be in the environment for all subsequent instructions in the build stage and can be replaced 
+inline in many as well. 
+
+```dockerfile
+ENV MY_NAME="John Doe"
+ENV MY_DOG=Rex\ The\ Dog
+ENV MY_CAT=fluffy
+
+# One line:
+ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
+    MY_CAT=fluffy
+```
+
+The environment variables set using `ENV` will persist when a container is run from the resulting 
+image. You can view the values using `docker inspect`, and change them using 
+`docker run --env <key>=<value>`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
