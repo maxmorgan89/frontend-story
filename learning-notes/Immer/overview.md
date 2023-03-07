@@ -3,7 +3,7 @@
 Immer (German for: always) is a tiny package that allows you to work with immutable state in
 a more convenient way.
 
-### Immer simplifies handling immutable data structures#
+### Immer simplifies handling immutable data structures
 
 Immer can be used in any context in which immutable data structures need to be used.
 For example in combination with React state, React or Redux reducers, or configuration management.
