@@ -198,7 +198,8 @@ the point that Class A instance is not the exclusive container of Class B instan
 as in fact the same Class B instance has another container/s.
 
 ![Aggregation](images/aggregation.png)
-####Composition Example:
+
+#### Composition Example:
 We should be more specific and use the composition link in cases where in addition
 to the part-of relationship between Class A and Class B - there's a strong lifecycle
 dependency between the two, meaning that when Class A is deleted then Class B is
