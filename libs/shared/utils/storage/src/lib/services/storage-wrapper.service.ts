@@ -12,7 +12,7 @@ export class StorageWrapperService {
     @Inject(SessionStorage) private readonly sessionStorage: Storage | null,
   ) { }
 
-  public setStorageItem(key: string, value: unknown, useSessionStorage = false): boolean {
+  public setStorageItem(key: string, value: string, useSessionStorage = false): boolean {
     if (isNil(key)) {
       return false;
     }
@@ -25,18 +25,16 @@ export class StorageWrapperService {
       return false;
     }
 
-    const preparedValue: string = typeof value === 'string' ? value : JSON.stringify(value);
-
     if (useSessionStorage) {
-      this.sessionStorage?.setItem(key, preparedValue)
+      this.sessionStorage?.setItem(key, value)
     } else {
-      this.localStorage?.setItem(key, preparedValue)
+      this.localStorage?.setItem(key, value)
     }
 
     return true;
   }
 
-  public getStorageItem(key: string, parseJsonResult = false): string | null {
+  public getStorageItem(key: string): string | null {
     let result: string | null = null;
 
     if (!isNil(this.sessionStorage)) {
@@ -45,10 +43,6 @@ export class StorageWrapperService {
 
     if (!isNil(this.localStorage)) {
       result = result ?? this.localStorage.getItem(key);
-    }
-
-    if (parseJsonResult && !isNil(result)) {
-      result = JSON.parse(result);
     }
 
     return result;
